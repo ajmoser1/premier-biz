@@ -10,14 +10,14 @@ export const metadata = makeMetadata({
 export default function CommercialPage() {
   return (
     <div className="space-y-5">
-      <h1 className="text-4xl font-bold text-slate-900">Commercial Services</h1>
-      <p className="max-w-3xl text-slate-700">
+      <h1 className="text-4xl font-bold text-sky-900">Commercial Services</h1>
+      <p className="max-w-3xl text-sky-700">
         We support independent retail stores, restaurants, office parks, gym parking
         lots, and apartment common areas with fast, reliable exterior cleaning.
       </p>
-      <div className="rounded-xl border border-slate-200 bg-white p-5">
-        <h2 className="text-xl font-semibold text-slate-900">Ideal Partnership Fits</h2>
-        <ul className="mt-3 list-disc space-y-1 pl-5 text-slate-700">
+      <div className="rounded-xl border border-sky-200 bg-white p-5">
+        <h2 className="text-xl font-semibold text-sky-900">Ideal Partnership Fits</h2>
+        <ul className="mt-3 list-disc space-y-1 pl-5 text-sky-700">
           <li>Small real estate agencies and listing teams</li>
           <li>Retail strips and standalone storefronts</li>
           <li>Restaurant storefront and patio cleanups</li>
@@ -26,7 +26,7 @@ export default function CommercialPage() {
       </div>
       <a
         href="mailto:hello@premierhomeserviceschi.com"
-        className="inline-block rounded-full bg-slate-900 px-5 py-3 text-sm font-semibold text-white"
+        className="inline-block rounded-full bg-red-600 px-5 py-3 text-sm font-semibold text-white hover:bg-red-500"
       >
         Discuss Commercial Contracting
       </a>

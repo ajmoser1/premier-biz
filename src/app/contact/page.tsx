@@ -13,11 +13,11 @@ export default function ContactPage() {
   return (
     <div className="grid gap-6 md:grid-cols-2">
       <section className="space-y-4">
-        <h1 className="text-4xl font-bold text-slate-900">Contact Us</h1>
-        <p className="text-slate-700">
+        <h1 className="text-4xl font-bold text-sky-900">Contact Us</h1>
+        <p className="text-sky-700">
           Need emergency or same-day service? Call or text us now.
         </p>
-        <div className="rounded-xl border border-slate-200 bg-white p-5 text-slate-700">
+        <div className="rounded-xl border border-sky-200 bg-white p-5 text-sky-700">
           <p>
             <strong>Phone:</strong> <a href={contactLinks.callHref}>{siteConfig.primaryPhoneDisplay}</a>
           </p>

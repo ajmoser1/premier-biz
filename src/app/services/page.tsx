@@ -12,19 +12,19 @@ export const metadata = makeMetadata({
 export default function ServicesPage() {
   return (
     <div>
-      <h1 className="text-4xl font-bold text-slate-900">Our Services</h1>
-      <p className="mt-3 max-w-3xl text-slate-700">
+      <h1 className="text-4xl font-bold text-sky-900">Our Services</h1>
+      <p className="mt-3 max-w-3xl text-sky-700">
         We provide on-demand exterior cleaning for homes and small commercial
         properties throughout Chicagoland.
       </p>
       <div className="mt-8 grid gap-4 md:grid-cols-2">
         {services.map((service) => (
-          <article key={service.slug} className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
-            <h2 className="text-xl font-semibold text-slate-900">{service.name}</h2>
-            <p className="mt-2 text-slate-700">{service.shortDescription}</p>
+          <article key={service.slug} className="rounded-xl border border-sky-200 bg-white p-5 shadow-sm">
+            <h2 className="text-xl font-semibold text-sky-900">{service.name}</h2>
+            <p className="mt-2 text-sky-700">{service.shortDescription}</p>
             <Link
               href={`/services/${service.slug}`}
-              className="mt-4 inline-block text-sm font-semibold text-emerald-700"
+              className="mt-4 inline-block text-sm font-semibold text-red-600 hover:text-red-500"
             >
               View details
             </Link>

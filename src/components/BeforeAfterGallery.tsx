@@ -30,13 +30,13 @@ const galleryImages = [
 export function BeforeAfterGallery() {
   return (
     <section>
-      <h2 className="text-2xl font-bold text-slate-900">Before and After Results</h2>
-      <p className="mt-2 text-slate-700">
+      <h2 className="text-2xl font-bold text-sky-900">Before and After Results</h2>
+      <p className="mt-2 text-sky-700">
         Real project photos from recent Premier Home Services jobs.
       </p>
       <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
         {galleryImages.map((image) => (
-          <div key={image.src} className="overflow-hidden rounded-xl border border-slate-200 bg-black shadow-sm">
+          <div key={image.src} className="overflow-hidden rounded-xl border border-sky-200 bg-black shadow-sm">
             <Image
               src={image.src}
               alt={image.alt}

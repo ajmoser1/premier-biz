@@ -17,10 +17,10 @@ export const serviceCities: ServiceCity[] = [
   { slug: "lake-zurich", name: "Lake Zurich, IL, USA" },
   { slug: "lincolnshire", name: "Lincolnshire, IL, USA" },
   { slug: "dupage-county", name: "DuPage County, IL, USA" },
-  { slug: "winnetka", name: "Winnetka, IL 60093, USA" },
+  { slug: "winnetka", name: "Winnetka, IL, USA" },
   { slug: "barrington-hills", name: "Barrington Hills, IL, USA" },
-  { slug: "kenilworth", name: "Kenilworth, IL 60043, USA" },
-  { slug: "riverwoods", name: "Riverwoods, IL 60015, USA" },
+  { slug: "kenilworth", name: "Kenilworth, IL, USA" },
+  { slug: "riverwoods", name: "Riverwoods, IL, USA" },
   { slug: "chicago-metropolitan-area", name: "Chicago Metropolitan Area, USA" },
 ];
 

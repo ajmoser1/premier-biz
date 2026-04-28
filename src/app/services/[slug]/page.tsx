@@ -45,20 +45,20 @@ export default async function ServicePage({ params }: Props) {
 
   return (
     <article className="space-y-6">
-      <h1 className="text-4xl font-bold text-slate-900">{service.name}</h1>
-      <p className="max-w-3xl text-slate-700">{service.longDescription}</p>
+      <h1 className="text-4xl font-bold text-sky-900">{service.name}</h1>
+      <p className="max-w-3xl text-sky-700">{service.longDescription}</p>
       <section className="grid gap-6 md:grid-cols-2">
-        <div className="rounded-xl border border-slate-200 bg-white p-5">
-          <h2 className="text-xl font-semibold text-slate-900">What&apos;s Included</h2>
-          <ul className="mt-3 list-disc space-y-1 pl-5 text-slate-700">
+        <div className="rounded-xl border border-sky-200 bg-white p-5">
+          <h2 className="text-xl font-semibold text-sky-900">What&apos;s Included</h2>
+          <ul className="mt-3 list-disc space-y-1 pl-5 text-sky-700">
             {service.includes.map((item) => (
               <li key={item}>{item}</li>
             ))}
           </ul>
         </div>
-        <div className="rounded-xl border border-slate-200 bg-white p-5">
-          <h2 className="text-xl font-semibold text-slate-900">Best Fit For</h2>
-          <ul className="mt-3 list-disc space-y-1 pl-5 text-slate-700">
+        <div className="rounded-xl border border-sky-200 bg-white p-5">
+          <h2 className="text-xl font-semibold text-sky-900">Best Fit For</h2>
+          <ul className="mt-3 list-disc space-y-1 pl-5 text-sky-700">
             {service.idealFor.map((item) => (
               <li key={item}>{item}</li>
             ))}
@@ -67,7 +67,7 @@ export default async function ServicePage({ params }: Props) {
       </section>
       <Link
         href="/request-quote"
-        className="inline-block rounded-full bg-slate-900 px-5 py-3 text-sm font-semibold text-white"
+        className="inline-block rounded-full bg-red-600 px-5 py-3 text-sm font-semibold text-white hover:bg-red-500"
       >
         Request Same-Day Quote
       </Link>

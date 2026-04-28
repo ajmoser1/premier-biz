@@ -11,6 +11,18 @@ npm install
 npm run dev
 ```
 
+Create environment variables:
+
+```bash
+cp .env.example .env.local
+```
+
+Set the values in `.env.local`:
+
+- `RESEND_API_KEY` from your Resend dashboard.
+- `QUOTE_TO_EMAIL` inbox where you want lead notifications.
+- `QUOTE_FROM_EMAIL` sender address (must be verified in Resend for production).
+
 Open [http://localhost:3000](http://localhost:3000).
 
 ## Content Checklist Before Launch
@@ -23,7 +35,7 @@ Open [http://localhost:3000](http://localhost:3000).
 - Confirm city list in `src/lib/cities.ts`.
 - Replace gallery placeholders with real before/after images in `public/images`.
 - Add logo/brand assets in `public/`.
-- Connect `QuoteForm` to your preferred CRM/email workflow.
+- Verify quote-form email delivery in Resend (sandbox sender is for testing only).
 
 ## Key Routes
 

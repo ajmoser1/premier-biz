@@ -11,8 +11,8 @@ export const metadata = makeMetadata({
 export default function RequestQuotePage() {
   return (
     <div className="mx-auto max-w-2xl space-y-4">
-      <h1 className="text-4xl font-bold text-slate-900">Request a Quote</h1>
-      <p className="text-slate-700">
+      <h1 className="text-4xl font-bold text-sky-900">Request a Quote</h1>
+      <p className="text-sky-700">
         Tell us about your property and service needs. We will follow up quickly.
       </p>
       <QuoteForm />

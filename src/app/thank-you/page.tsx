@@ -10,21 +10,21 @@ export const metadata = makeMetadata({
 
 export default function ThankYouPage() {
   return (
-    <div className="mx-auto max-w-2xl space-y-4 rounded-xl border border-emerald-200 bg-emerald-50 p-8">
-      <h1 className="text-3xl font-bold text-emerald-900">Thank You</h1>
-      <p className="text-emerald-900">
+    <div className="mx-auto max-w-2xl space-y-4 rounded-xl border border-sky-200 bg-sky-50 p-8">
+      <h1 className="text-3xl font-bold text-sky-900">Thank You</h1>
+      <p className="text-sky-900">
         We received your request and will reach out as soon as possible.
       </p>
       <a
         href={siteConfig.googleBusinessProfileUrl}
         target="_blank"
         rel="noreferrer"
-        className="inline-block rounded-full bg-emerald-700 px-5 py-3 text-sm font-semibold text-white"
+        className="inline-block rounded-full bg-red-600 px-5 py-3 text-sm font-semibold text-white hover:bg-red-500"
       >
         Leave a Google Review
       </a>
       <p>
-        <Link href="/" className="font-semibold text-emerald-800">
+        <Link href="/" className="font-semibold text-red-700 hover:text-red-600">
           Return to homepage
         </Link>
       </p>

@@ -38,17 +38,17 @@ export default async function CityPage({ params }: Props) {
 
   return (
     <article className="space-y-5">
-      <h1 className="text-4xl font-bold text-slate-900">
+      <h1 className="text-4xl font-bold text-sky-900">
         Same-Day Exterior Cleaning in {cityData.name}, IL
       </h1>
-      <p className="max-w-3xl text-slate-700">
+      <p className="max-w-3xl text-sky-700">
         Premier Home Services helps homes and local businesses in {cityData.name} with
         pressure washing, window cleaning, gutter cleaning, trash can cleaning, and roof
         softwashing.
       </p>
-      <div className="rounded-xl border border-slate-200 bg-white p-5">
-        <h2 className="text-xl font-semibold text-slate-900">Who We Serve in {cityData.name}</h2>
-        <ul className="mt-3 list-disc space-y-1 pl-5 text-slate-700">
+      <div className="rounded-xl border border-sky-200 bg-white p-5">
+        <h2 className="text-xl font-semibold text-sky-900">Who We Serve in {cityData.name}</h2>
+        <ul className="mt-3 list-disc space-y-1 pl-5 text-sky-700">
           <li>Homeowners and luxury residential properties</li>
           <li>Home sellers and local real estate partners</li>
           <li>Independent retail and restaurant storefronts</li>
@@ -57,7 +57,7 @@ export default async function CityPage({ params }: Props) {
       </div>
       <Link
         href="/request-quote"
-        className="inline-block rounded-full bg-emerald-600 px-5 py-3 text-sm font-bold text-white"
+        className="inline-block rounded-full bg-red-600 px-5 py-3 text-sm font-bold text-white hover:bg-red-500"
       >
         Get a Quote in {cityData.name}
       </Link>
