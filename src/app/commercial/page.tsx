@@ -25,7 +25,7 @@ export default function CommercialPage() {
         </ul>
       </div>
       <a
-        href="mailto:hello@premierhomeserviceschi.com"
+        href="mailto:alex@premiercleaning.online"
         className="inline-block rounded-full bg-red-600 px-5 py-3 text-sm font-semibold text-white hover:bg-red-500"
       >
         Discuss Commercial Contracting

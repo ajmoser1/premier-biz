@@ -7,8 +7,10 @@ type QuotePayload = {
   email?: string;
   city?: string;
   serviceType?: string;
+  selectedPackage?: string;
   propertyType?: string;
   urgency?: string;
+  addOnsInterest?: string;
   details?: string;
 };
 
@@ -61,8 +63,10 @@ export async function POST(request: Request) {
         `Email: ${payload.email?.trim() || "Not provided"}`,
         `City/ZIP: ${payload.city?.trim() || "Not provided"}`,
         `Service Type: ${payload.serviceType?.trim() || "Not provided"}`,
+        `Selected Package: ${payload.selectedPackage?.trim() || "Not provided"}`,
         `Property Type: ${payload.propertyType?.trim() || "Not provided"}`,
         `Urgency: ${payload.urgency?.trim() || "Not provided"}`,
+        `Add-On Interests: ${payload.addOnsInterest?.trim() || "Not provided"}`,
         `Details: ${payload.details?.trim() || "Not provided"}`,
       ].join("\n"),
       html: `
@@ -72,8 +76,10 @@ export async function POST(request: Request) {
         ${formatField("Email", payload.email)}
         ${formatField("City or ZIP", payload.city)}
         ${formatField("Service Type", payload.serviceType)}
+        ${formatField("Selected Package", payload.selectedPackage)}
         ${formatField("Property Type", payload.propertyType)}
         ${formatField("Urgency", payload.urgency)}
+        ${formatField("Add-On Interests", payload.addOnsInterest)}
         ${formatField("Details", payload.details)}
       `,
     });

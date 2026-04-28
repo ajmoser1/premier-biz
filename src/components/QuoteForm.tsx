@@ -1,23 +1,34 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import { servicePackages } from "@/lib/packages";
 
-const initialState = {
+const defaultPackageOption = "Not sure yet";
+
+function getInitialState(preselectedPackage = defaultPackageOption) {
+  return {
   name: "",
   phone: "",
   email: "",
   city: "",
   serviceType: "Pressure Washing",
+  selectedPackage: preselectedPackage,
   propertyType: "Residential",
   urgency: "Same-day",
+  addOnsInterest: "",
   details: "",
+  };
+}
+
+type QuoteFormProps = {
+  preselectedPackage?: string;
 };
 
-export function QuoteForm() {
+export function QuoteForm({ preselectedPackage = defaultPackageOption }: QuoteFormProps) {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [form, setForm] = useState(initialState);
+  const [form, setForm] = useState(() => getInitialState(preselectedPackage));
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -38,7 +49,7 @@ export function QuoteForm() {
       }
 
       setSubmitted(true);
-      setForm(initialState);
+      setForm(getInitialState(preselectedPackage));
     } catch {
       setError("Could not send your request right now. Please call us directly.");
     } finally {
@@ -96,6 +107,16 @@ export function QuoteForm() {
         <option>Roof Cleaning</option>
       </select>
       <select
+        value={form.selectedPackage}
+        onChange={(event) => setForm({ ...form, selectedPackage: event.target.value })}
+        className="rounded-lg border border-sky-300 px-3 py-2"
+      >
+        <option>{defaultPackageOption}</option>
+        {servicePackages.map((item) => (
+          <option key={item.slug}>{item.name}</option>
+        ))}
+      </select>
+      <select
         value={form.propertyType}
         onChange={(event) => setForm({ ...form, propertyType: event.target.value })}
         className="rounded-lg border border-sky-300 px-3 py-2"
@@ -112,6 +133,12 @@ export function QuoteForm() {
         <option>This week</option>
         <option>Flexible</option>
       </select>
+      <textarea
+        placeholder="Add-on interests (staining, hauling, handyman, etc.)"
+        value={form.addOnsInterest}
+        onChange={(event) => setForm({ ...form, addOnsInterest: event.target.value })}
+        className="min-h-20 rounded-lg border border-sky-300 px-3 py-2"
+      />
       <textarea
         placeholder="Tell us about the job"
         value={form.details}

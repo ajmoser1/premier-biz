@@ -3,6 +3,7 @@ import { contactLinks, siteConfig } from "@/lib/site";
 
 const navLinks = [
   { href: "/services", label: "Services" },
+  { href: "/packages", label: "Packages" },
   { href: "/service-areas", label: "Service Areas" },
   { href: "/commercial", label: "Commercial" },
   { href: "/about", label: "About" },

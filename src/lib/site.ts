@@ -5,7 +5,7 @@ export const siteConfig = {
   primaryPhoneRaw: "+18472576322",
   smsDisplay: "(847) 257-6322",
   smsRaw: "+18472576322",
-  email: "hello@premierhomeserviceschi.com",
+  email: "alex@premiercleaning.online",
   googleBusinessProfileUrl: "https://g.page/r/replace-with-your-google-business-profile",
   serviceRadiusLabel: "Chicagoland",
   cityState: "Chicago, IL",
@@ -19,7 +19,7 @@ export const contactLinks = {
 } as const;
 
 export const businessChecklist = [
-  "Replace email in siteConfig with your real business inbox.",
+  "Confirm inbound emails are monitored for quote responses.",
   "Replace Google Business Profile URL in siteConfig.",
   "Confirm service-area city list in src/lib/cities.ts.",
   "Add logo and before/after photos in public/images.",
