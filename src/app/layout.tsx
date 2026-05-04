@@ -1,20 +1,22 @@
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { StickyCallBar } from "@/components/StickyCallBar";
 import { localBusinessJsonLd, makeMetadata } from "@/lib/seo";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
   subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = makeMetadata({
@@ -31,9 +33,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${inter.variable} ${playfair.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col bg-sky-50 text-sky-900">
+      <body className="flex min-h-full flex-col bg-[#f8f6f1] text-[#1a1a1a] font-sans">
         <Header />
         <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-8">{children}</main>
         <Footer />

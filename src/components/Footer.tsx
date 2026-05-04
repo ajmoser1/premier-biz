@@ -1,34 +1,131 @@
 import Link from "next/link";
-import { siteConfig } from "@/lib/site";
+import { contactLinks, siteConfig } from "@/lib/site";
+
+const footerLinks = {
+  services: [
+    { href: "/services/pressure-washing", label: "Pressure Washing" },
+    { href: "/services/exterior-window-cleaning", label: "Window Cleaning" },
+    { href: "/services/gutter-cleaning", label: "Gutter Cleaning" },
+    { href: "/services/roof-cleaning", label: "Roof Cleaning" },
+  ],
+  company: [
+    { href: "/packages", label: "Service Packages" },
+    { href: "/service-areas", label: "Service Areas" },
+    { href: "/about", label: "About Us" },
+    { href: "/contact", label: "Contact" },
+  ],
+};
 
 export function Footer() {
   return (
-    <footer className="mt-16 border-t border-sky-200 bg-sky-50">
-      <div className="mx-auto grid w-full max-w-6xl gap-6 px-4 py-10 md:grid-cols-3">
-        <div>
-          <p className="font-semibold text-sky-900">{siteConfig.companyName}</p>
-          <p className="mt-2 text-sm text-sky-700">
-            Same-day and emergency exterior cleaning across Chicagoland.
+    <footer className="bg-[#1a2744] pb-24 md:pb-0">
+      {/* Main Footer Content */}
+      <div className="mx-auto max-w-6xl px-4 py-12 md:py-16">
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+          {/* Brand */}
+          <div className="lg:col-span-1">
+            <Link href="/" className="inline-block">
+              <span className="font-serif text-xl font-semibold text-white">
+                {siteConfig.companyName}
+              </span>
+            </Link>
+            <p className="mt-3 text-sm leading-relaxed text-[#a8d4be]">
+              Premium exterior cleaning services throughout Chicagoland. Same-day and emergency service available.
+            </p>
+            <div className="mt-4 h-1 w-12 rounded-full bg-[#7db89b]" />
+          </div>
+
+          {/* Services */}
+          <div>
+            <h3 className="text-xs font-semibold uppercase tracking-wider text-[#7db89b]">
+              Services
+            </h3>
+            <ul className="mt-4 space-y-3">
+              {footerLinks.services.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-[#a8d4be] transition-colors hover:text-white"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Company */}
+          <div>
+            <h3 className="text-xs font-semibold uppercase tracking-wider text-[#7db89b]">
+              Company
+            </h3>
+            <ul className="mt-4 space-y-3">
+              {footerLinks.company.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-[#a8d4be] transition-colors hover:text-white"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div>
+            <h3 className="text-xs font-semibold uppercase tracking-wider text-[#7db89b]">
+              Contact Us
+            </h3>
+            <ul className="mt-4 space-y-3">
+              <li>
+                <a
+                  href={contactLinks.callHref}
+                  className="flex items-center gap-2 text-sm text-[#a8d4be] transition-colors hover:text-white"
+                >
+                  <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  </svg>
+                  {siteConfig.primaryPhoneDisplay}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={contactLinks.emailHref}
+                  className="flex items-center gap-2 text-sm text-[#a8d4be] transition-colors hover:text-white"
+                >
+                  <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                  {siteConfig.email}
+                </a>
+              </li>
+              <li className="pt-2">
+                <Link
+                  href="/request-quote"
+                  className="inline-flex items-center gap-2 rounded-md bg-[#1e4d3a] px-4 py-2 text-sm font-medium text-white transition-all hover:bg-[#163d2e]"
+                >
+                  Get a Free Quote
+                  <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom Bar */}
+      <div className="border-t border-[#1e4d3a]/30">
+        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-4 py-6 text-center md:flex-row md:text-left">
+          <p className="text-xs text-[#64748b]">
+            &copy; {new Date().getFullYear()} {siteConfig.companyName}. All rights reserved.
           </p>
-        </div>
-        <div className="text-sm text-sky-700">
-          <p className="font-semibold text-sky-900">Quick Links</p>
-          <ul className="mt-2 space-y-1">
-            <li>
-              <Link href="/services">Services</Link>
-            </li>
-            <li>
-              <Link href="/service-areas">Service Areas</Link>
-            </li>
-            <li>
-              <Link href="/commercial">Commercial Services</Link>
-            </li>
-          </ul>
-        </div>
-        <div className="text-sm text-sky-700">
-          <p className="font-semibold text-sky-900">Contact</p>
-          <p className="mt-2">{siteConfig.primaryPhoneDisplay}</p>
-          <p>{siteConfig.email}</p>
+          <p className="text-xs text-[#64748b]">
+            Serving {siteConfig.serviceRadiusLabel}
+          </p>
         </div>
       </div>
     </footer>
