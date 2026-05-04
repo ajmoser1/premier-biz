@@ -1,21 +1,219 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f8fafc;
-  --foreground: #0f172a;
+  /* Classic Premium - Blue & Green Palette */
+  --color-primary: #1a2744;
+  --color-secondary: #1e4d3a;
+  --color-accent: #7db89b;
+  --color-accent-light: #a8d4be;
+  
+  /* Backgrounds */
+  --background: #f8f6f1;
+  --background-surface: #ffffff;
+  --background-dark: #1a2744;
+  
+  /* Text */
+  --foreground: #1a1a1a;
+  --foreground-muted: #64748b;
+  --foreground-light: #f8f6f1;
+  
+  /* Borders */
+  --border-subtle: #e2e0db;
+  --border-accent: #7db89b;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-primary: var(--color-primary);
+  --color-secondary: var(--color-secondary);
+  --color-accent: var(--color-accent);
+  --font-sans: var(--font-inter), 'Inter', system-ui, sans-serif;
+  --font-serif: var(--font-playfair), 'Playfair Display', Georgia, serif;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+}
+
+/* Typography utilities */
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Premium button styles */
+.btn-primary {
+  background: var(--color-secondary);
+  color: var(--foreground-light);
+  padding: 0.875rem 1.75rem;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.btn-primary:hover {
+  background: #163d2e;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(30, 77, 58, 0.25);
+}
+
+.btn-secondary {
+  background: var(--color-primary);
+  color: var(--foreground-light);
+  padding: 0.875rem 1.75rem;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.btn-secondary:hover {
+  background: #0f1a2e;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(26, 39, 68, 0.25);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--color-secondary);
+  border: 2px solid var(--color-secondary);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.btn-outline:hover {
+  background: var(--color-secondary);
+  color: var(--foreground-light);
+}
+
+/* Card styles with premium feel */
+.card-premium {
+  background: var(--background-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.card-premium:hover {
+  border-color: var(--border-accent);
+  box-shadow: 0 8px 30px rgba(26, 39, 68, 0.08);
+  transform: translateY(-2px);
+}
+
+/* Form input styles */
+.input-premium {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  border: 1px solid var(--border-subtle);
+  border-radius: 0.375rem;
+  background: var(--background-surface);
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.input-premium:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(125, 184, 155, 0.15);
+}
+
+.input-premium::placeholder {
+  color: var(--foreground-muted);
+}
+
+/* Accent line decorations */
+.accent-line {
+  height: 3px;
+  width: 60px;
+  background: var(--color-accent);
+  border-radius: 2px;
+}
+
+/* Premium section spacing */
+.section-premium {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+@media (max-width: 768px) {
+  .section-premium {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+}
+
+/* Service chip selection styles */
+.service-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.625rem 1rem;
+  border: 2px solid var(--border-subtle);
+  border-radius: 2rem;
+  background: var(--background-surface);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.service-chip:hover {
+  border-color: var(--color-accent);
+  background: rgba(125, 184, 155, 0.05);
+}
+
+.service-chip.selected {
+  border-color: var(--color-secondary);
+  background: var(--color-secondary);
+  color: var(--foreground-light);
+}
+
+/* Progress indicator */
+.progress-step {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--foreground-muted);
+}
+
+.progress-step.active {
+  color: var(--color-secondary);
+  font-weight: 500;
+}
+
+.progress-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--border-subtle);
+}
+
+.progress-dot.active {
+  background: var(--color-secondary);
+}
+
+.progress-dot.complete {
+  background: var(--color-accent);
 }
 
 @layer base {
