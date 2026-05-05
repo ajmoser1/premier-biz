@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { contactLinks, siteConfig } from "@/lib/site";
+import { contactLinks } from "@/lib/site";
 
 export function StickyCallBar() {
   return (
@@ -25,7 +25,7 @@ export function StickyCallBar() {
         {/* Quote Button */}
         <Link
           href="/request-quote"
-          className="flex flex-1 items-center justify-center gap-2 rounded-md border-2 border-[#7db89b] px-4 py-3 text-sm font-medium text-white transition-all active:scale-[0.98]"
+          className="flex flex-1 items-center justify-center gap-2 rounded-md bg-[#7db89b] px-4 py-3 text-sm font-semibold text-[#1a2744] shadow-md ring-2 ring-[#1a2744]/20 ring-offset-2 ring-offset-[#1a2744] transition-all hover:bg-[#6a9e82] hover:shadow-lg active:scale-[0.98]"
         >
           <span>Free Quote</span>
           <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

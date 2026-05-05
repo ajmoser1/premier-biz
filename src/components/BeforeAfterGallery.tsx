@@ -1,60 +1,62 @@
 import Image from "next/image";
+import Link from "next/link";
+import { beforeAfterGalleryImages } from "@/lib/gallery";
 
-const galleryImages = [
-  {
-    src: "/images/gallery/chicago-driveway-pressure-washing-before-after.webp",
-    alt: "Driveway before and after pressure washing result",
-  },
-  {
-    src: "/images/gallery/chicago-outdoor-structure-softwash-before-after.webp",
-    alt: "Outdoor structure before and after wash result",
-  },
-  {
-    src: "/images/gallery/chicago-siding-softwash-before-after.webp",
-    alt: "House siding before and after softwash result",
-  },
-  {
-    src: "/images/gallery/chicago-sidewalk-pressure-washing-before-after.webp",
-    alt: "Sidewalk before and after pressure washing result",
-  },
-  {
-    src: "/images/gallery/chicago-patio-pressure-washing-before-after.webp",
-    alt: "Patio concrete before and after pressure washing result",
-  },
-  {
-    src: "/images/gallery/chicago-house-wash-before-after.webp",
-    alt: "House exterior siding before and after cleaning result",
-  },
-];
+type BeforeAfterGalleryProps = {
+  /** Tighter heading + marquee strip for above-the-fold home placement */
+  compact?: boolean;
+};
 
-export function BeforeAfterGallery() {
+export function BeforeAfterGallery({ compact = false }: BeforeAfterGalleryProps) {
+  const marqueeImages = [...beforeAfterGalleryImages, ...beforeAfterGalleryImages];
+
   return (
-    <section>
-      <div className="mb-4 h-1 w-12 rounded-full bg-[#7db89b]" />
-      <h2 className="font-serif text-3xl font-semibold text-[#1a2744] md:text-4xl">
+    <section className={compact ? "space-y-1.5" : "space-y-3"}>
+      <h2
+        className={
+          compact
+            ? "text-lg font-bold text-sky-900 md:text-xl"
+            : "text-2xl font-bold text-sky-900"
+        }
+      >
         Before and After Results
       </h2>
-      <p className="mt-4 max-w-xl text-[#64748b]">
-        Real project photos from recent Premier Home Services jobs throughout Chicagoland.
+      <p className={compact ? "text-xs text-sky-800 md:text-sm" : "text-sky-800"}>
+        Real project photos from recent Premier Home Services jobs.
       </p>
-      <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-        {galleryImages.map((image) => (
-          <div
-            key={image.src}
-            className="group relative overflow-hidden rounded-xl border border-[#e2e0db] bg-[#1a2744] shadow-sm transition-all hover:border-[#7db89b] hover:shadow-lg"
-          >
-            <Image
-              src={image.src}
-              alt={image.alt}
-              width={1024}
-              height={768}
-              className="h-auto w-full object-contain transition-transform duration-300 group-hover:scale-[1.02]"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            />
-            {/* Subtle green accent on hover */}
-            <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[#7db89b] to-[#1e4d3a] opacity-0 transition-opacity group-hover:opacity-100" />
-          </div>
-        ))}
+      <div
+        className={
+          compact
+            ? "overflow-hidden rounded-xl border border-sky-200 bg-sky-950/95 py-1.5 shadow-sm md:rounded-2xl md:py-2"
+            : "overflow-hidden rounded-2xl border border-sky-200 bg-sky-950/95 py-3 shadow-sm"
+        }
+      >
+        <div className="marquee-track">
+          {marqueeImages.map((image, index) => (
+            <Link
+              key={`${image.src}-${index}`}
+              href="/gallery"
+              aria-label="View full before and after gallery"
+              className={
+                compact
+                  ? "relative aspect-[5/4] w-[220px] flex-none overflow-hidden rounded-lg border border-white/15 bg-black shadow-sm transition-transform hover:scale-[1.01] sm:w-[240px] md:w-[280px]"
+                  : "relative aspect-[5/4] w-[260px] flex-none overflow-hidden rounded-xl border border-white/15 bg-black shadow-sm transition-transform hover:scale-[1.01] md:w-[300px] lg:w-[320px]"
+              }
+            >
+              <Image
+                src={image.src}
+                alt={image.alt}
+                fill
+                className="object-contain object-center"
+                sizes={
+                  compact
+                    ? "(max-width: 640px) 220px, (max-width: 768px) 240px, 280px"
+                    : "(max-width: 768px) 260px, (max-width: 1024px) 300px, 320px"
+                }
+              />
+            </Link>
+          ))}
+        </div>
       </div>
     </section>
   );

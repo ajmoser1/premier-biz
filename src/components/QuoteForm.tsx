@@ -7,7 +7,12 @@ const serviceOptions = [
   { id: "pressure-washing", label: "Pressure Washing" },
   { id: "window-cleaning", label: "Window Cleaning" },
   { id: "gutter-cleaning", label: "Gutter Cleaning" },
-  { id: "full-package", label: "Full Package" },
+  { id: "roof-cleaning", label: "Roof Cleaning" },
+  { id: "landscaping", label: "Landscaping" },
+  { id: "junk-removal", label: "Junk Removal" },
+  { id: "fence-repair", label: "Fence Building & Repair" },
+  { id: "deck-staining", label: "Deck Staining" },
+  { id: "estate-cleanout", label: "Estate/Garage Cleanout" },
 ];
 
 function getInitialState() {

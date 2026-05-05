@@ -66,22 +66,22 @@ export const services: Service[] = [
     ],
   },
   {
-    slug: "trash-can-cleaning",
-    name: "Trash Can Cleaning",
+    slug: "landscaping",
+    name: "Landscaping",
     shortDescription:
-      "Odor and residue removal for cleaner, better-smelling bins and pad areas.",
+      "Seasonal cleanups, bed refreshes, and curb-appeal landscaping done fast.",
     longDescription:
-      "Deep clean and sanitize garbage/recycling bins and surrounding areas to reduce odor, insects, and residue buildup.",
+      "We handle practical, high-impact landscaping tasks that keep your property polished, tidy, and listing-ready.",
     includes: [
-      "Interior and exterior rinse",
-      "Degreasing and deodorizing",
-      "Sanitizing treatment",
-      "Pad area rinse-down",
+      "Bed edging and bed cleanup",
+      "Weeding and seasonal refreshes",
+      "Mulch install or top-off",
+      "Shrub and hedge shaping",
     ],
     idealFor: [
-      "Busy families",
-      "Small commercial back-of-house areas",
-      "HOA and multi-unit properties",
+      "Homeowners improving curb appeal",
+      "Pre-listing prep for sellers",
+      "HOA common-area touchups",
     ],
   },
   {
@@ -101,6 +101,82 @@ export const services: Service[] = [
       "High-value residential properties",
       "Sellers improving listing appearance",
       "Annual exterior maintenance plans",
+    ],
+  },
+  {
+    slug: "junk-removal",
+    name: "Junk Removal",
+    shortDescription:
+      "Fast hauling for garages, yards, and move-out cleanup projects.",
+    longDescription:
+      "We remove unwanted items quickly and responsibly so your property is clear, safe, and presentation-ready.",
+    includes: [
+      "Garage and basement haul-outs",
+      "Yard debris and curbside pickup",
+      "Light demolition debris removal",
+      "Responsible disposal coordination",
+    ],
+    idealFor: [
+      "Move-out and estate transitions",
+      "Pre-renovation cleanups",
+      "Landlords turning over units",
+    ],
+  },
+  {
+    slug: "fence-building-repair",
+    name: "Fence Building and Repair",
+    shortDescription:
+      "Fence repairs and new section installs for privacy, safety, and curb appeal.",
+    longDescription:
+      "From broken panels to full section rebuilds, we restore or improve fencing with clean, durable workmanship.",
+    includes: [
+      "Panel and post replacement",
+      "Gate adjustments and hardware fixes",
+      "Fence line reinforcement",
+      "Site cleanup after completion",
+    ],
+    idealFor: [
+      "Storm or age-related fence damage",
+      "Homes preparing for sale",
+      "Property managers with recurring repair needs",
+    ],
+  },
+  {
+    slug: "deck-staining",
+    name: "Deck Staining",
+    shortDescription:
+      "Prep and stain services that bring weathered decks back to life.",
+    longDescription:
+      "We clean, prep, and stain deck surfaces to improve color, longevity, and overall finish quality.",
+    includes: [
+      "Surface prep and rinse",
+      "Targeted sanding for rough spots",
+      "Stain and sealant application",
+      "Dry-time and care guidance",
+    ],
+    idealFor: [
+      "Seasonal deck restoration",
+      "Properties needing polished outdoor spaces",
+      "Homeowners extending deck life",
+    ],
+  },
+  {
+    slug: "estate-garage-cleanout",
+    name: "Estate and Garage Cleanout",
+    shortDescription:
+      "Large cleanouts for estates, garages, and inherited properties.",
+    longDescription:
+      "We coordinate labor and hauling for large-volume cleanouts when a property needs to be cleared efficiently.",
+    includes: [
+      "Item sorting and staging",
+      "Large-load hauling coordination",
+      "Donation and disposal routing",
+      "Sweep-out and final walkthrough",
+    ],
+    idealFor: [
+      "Estate transitions and probate timelines",
+      "Real estate listing prep",
+      "Landlords and investors turning properties",
     ],
   },
 ];

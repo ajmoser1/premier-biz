@@ -43,7 +43,7 @@ export default async function CityPage({ params }: Props) {
       </h1>
       <p className="max-w-3xl text-sky-700">
         Premier Home Services helps homes and local businesses in {cityData.name} with
-        pressure washing, window cleaning, gutter cleaning, trash can cleaning, and roof
+        pressure washing, window cleaning, gutter cleaning, landscaping, and roof
         softwashing.
       </p>
       <div className="rounded-xl border border-sky-200 bg-white p-5">

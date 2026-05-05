@@ -104,7 +104,7 @@ export function Footer() {
               <li className="pt-2">
                 <Link
                   href="/request-quote"
-                  className="inline-flex items-center gap-2 rounded-md bg-[#1e4d3a] px-4 py-2 text-sm font-medium text-white transition-all hover:bg-[#163d2e]"
+                  className="inline-flex items-center gap-2 rounded-md bg-[#7db89b] px-4 py-2 text-sm font-semibold text-[#1a2744] shadow-md ring-2 ring-white/20 ring-offset-2 ring-offset-[#1a2744] transition-all hover:bg-[#6a9e82] hover:shadow-lg"
                 >
                   Get a Free Quote
                   <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

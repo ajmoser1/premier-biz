@@ -21,10 +21,8 @@ export function DualCTA({
 
   const primaryClasses = `${baseClasses} rounded-md bg-[#1e4d3a] text-[#f8f6f1] hover:bg-[#163d2e] hover:shadow-lg`;
 
-  const secondaryClasses = `${baseClasses} rounded-md border-2 ${
-    isLight
-      ? "border-[#7db89b] text-[#f8f6f1] hover:bg-[#7db89b]/10"
-      : "border-[#1e4d3a] text-[#1e4d3a] hover:bg-[#1e4d3a] hover:text-white"
+  const secondaryClasses = `${baseClasses} rounded-md bg-[#7db89b] font-semibold text-[#1a2744] shadow-md ring-2 ring-[#1a2744]/15 ring-offset-2 transition-all hover:bg-[#6a9e82] hover:shadow-lg hover:ring-[#1a2744]/25 active:scale-[0.99] ${
+    isLight ? "ring-offset-[#f8f6f1]" : "ring-offset-[#1a2744]"
   }`;
 
   return (

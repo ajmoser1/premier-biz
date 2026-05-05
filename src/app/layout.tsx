@@ -22,7 +22,7 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = makeMetadata({
   title: "Same-Day Exterior Cleaning in Chicagoland",
   description:
-    "Premier Home Services provides same-day pressure washing, window cleaning, gutter cleaning, trash can cleaning, and roof cleaning in Chicagoland.",
+    "Premier Home Services provides same-day pressure washing, window cleaning, gutter cleaning, landscaping, and roof cleaning in Chicagoland.",
 });
 
 export default function RootLayout({
@@ -37,7 +37,7 @@ export default function RootLayout({
     >
       <body className="flex min-h-full flex-col bg-[#f8f6f1] text-[#1a1a1a] font-sans">
         <Header />
-        <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-8">{children}</main>
+        <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-5 md:py-8">{children}</main>
         <Footer />
         <StickyCallBar />
         <script
