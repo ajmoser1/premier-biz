@@ -24,6 +24,9 @@ export const metadata: Metadata = makeMetadata({
   description:
     "Premier Home Services provides same-day pressure washing, window cleaning, gutter cleaning, landscaping, and roof cleaning in Chicagoland.",
 });
+metadata.verification = {
+  google: "jagAu6RYMgumy-U-ceJfsyI8nNCGbJRkQqRecSQ20ak",
+};
 
 export default function RootLayout({
   children,
