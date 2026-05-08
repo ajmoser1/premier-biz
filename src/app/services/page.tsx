@@ -41,11 +41,7 @@ export default function ServicesPage() {
             className="group rounded-xl border border-[#e2e0db] bg-white p-6 transition-all hover:border-[#7db89b] hover:shadow-lg"
           >
             <div className="flex items-start gap-4">
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#1e4d3a]/10 text-[#1e4d3a] transition-colors group-hover:bg-[#1e4d3a] group-hover:text-white">
-                <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
-                </svg>
-              </div>
+              
               <div className="flex-1">
                 <h2 className="font-serif text-xl font-semibold text-[#1a2744] group-hover:text-[#1e4d3a]">
                   {service.name}
