@@ -22,6 +22,14 @@ Set the values in `.env.local`:
 - `RESEND_API_KEY` from your Resend dashboard.
 - `QUOTE_TO_EMAIL` inbox where you want lead notifications.
 - `QUOTE_FROM_EMAIL` sender address (must be verified in Resend for production).
+- `GOOGLE_MAPS_API_KEY` with Places API (New) enabled.
+- `GOOGLE_PLACE_ID` for your Google Business Profile (already prefilled in `.env.example`).
+
+Sync Google reviews on demand:
+
+```bash
+npm run reviews:sync
+```
 
 Open [http://localhost:3000](http://localhost:3000).
 

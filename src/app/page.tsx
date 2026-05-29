@@ -2,6 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { BeforeAfterGallery } from "@/components/BeforeAfterGallery";
 import { QuoteForm } from "@/components/QuoteForm";
+import { ReviewSection } from "@/components/ReviewSection";
+import { getGoogleReviewSummary } from "@/lib/googleReviews";
 import { featuredPackageSlugs, servicePackages } from "@/lib/packages";
 import { services } from "@/lib/services";
 import { contactLinks, siteConfig } from "@/lib/site";
@@ -11,10 +13,13 @@ export default function Home() {
     featuredPackageSlugs.includes(item.slug as (typeof featuredPackageSlugs)[number]),
   );
   const featuredServices = services.slice(0, 4);
+  const reviewSummary = getGoogleReviewSummary();
+  const hasRatings =
+    typeof reviewSummary.rating === "number" && reviewSummary.userRatingCount > 0;
 
   return (
     <div className="space-y-0">
-      <section className="relative -mx-4 -mt-8 overflow-hidden bg-[#1a2744] px-4 py-8 md:py-12 lg:py-14">
+      <section className="relative -mx-4 -mt-8 overflow-hidden bg-[#1a2744] px-4 py-6 md:py-10 lg:py-12">
         <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(125,184,155,0.3),transparent_70%)]" />
         </div>
@@ -22,15 +27,11 @@ export default function Home() {
         <div className="relative mx-auto max-w-6xl">
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-[minmax(0,1fr)_minmax(220px,40%)] sm:items-center sm:gap-4 md:grid-cols-[minmax(0,1fr)_minmax(260px,420px)] md:gap-6 lg:gap-8">
             <div className="text-center sm:text-left">
-              <div className="mx-auto mb-2 h-0.5 w-12 rounded-full bg-[#7db89b] sm:mx-0" />
-              <p className="text-xs font-medium uppercase tracking-widest text-[#7db89b] md:text-sm">
-                Premium Exterior Cleaning
-              </p>
-              <h1 className="mt-2 font-serif text-3xl font-semibold leading-tight tracking-tight text-white sm:text-4xl md:text-5xl lg:text-5xl text-balance">
-                Protect Your Home&apos;s Value and Curb Appeal
+              <h1 className="mt-1 font-serif text-3xl font-semibold leading-tight tracking-tight text-white sm:text-4xl md:text-5xl lg:text-5xl text-balance">
+                Feel Happy With Your Home Again!
               </h1>
-              <p className="mx-auto mt-3 max-w-xl rounded-lg bg-white/90 px-4 py-2.5 text-sm leading-snug text-[#1a2744] sm:mx-0 md:mt-4 md:px-4 md:py-3 md:text-base md:leading-relaxed">
-                Fast, responsive scheduling for homeowners, sellers, and commercial
+              <p className="mx-auto mt-2 max-w-xl rounded-lg bg-white/90 px-4 py-2.5 text-sm leading-snug text-[#1a2744] sm:mx-0 md:mt-3 md:px-4 md:py-3 md:text-base md:leading-relaxed">
+                Fast scheduling for homeowners, sellers, and commercial
                 properties. Same-day exterior cleaning available throughout{" "}
                 {siteConfig.serviceRadiusLabel}.
               </p>
@@ -59,9 +60,17 @@ export default function Home() {
                   </svg>
                 </Link>
               </div>
-              <p className="mt-2 text-xs leading-snug text-[#94a3b8] sm:mt-3 sm:text-sm">
-                Serving homeowners, sellers, and commercial properties
-              </p>
+              {hasRatings ? (
+                <a
+                  href={reviewSummary.googleMapsUri}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-3 inline-flex items-center gap-2 rounded-full border border-[#7db89b]/35 bg-[#1e4d3a]/35 px-3 py-1 text-xs font-semibold text-[#d9f4e8] transition-colors hover:border-[#7db89b]"
+                >
+                  <span aria-hidden>★</span>
+                  {reviewSummary.rating?.toFixed(1)} ({reviewSummary.userRatingCount} Google reviews)
+                </a>
+              ) : null}
             </div>
 
             <div className="mx-auto w-full max-w-md shrink-0 sm:mx-0 sm:max-w-none">
@@ -81,7 +90,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 pb-2 pt-4 md:pb-3 md:pt-5">
+      <section className="-mx-4 min-w-0 pb-2 pt-4 md:mx-auto md:max-w-6xl md:pb-3 md:pt-5">
         <BeforeAfterGallery compact />
       </section>
 
@@ -106,21 +115,15 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 py-16 md:py-20">
-        <div className="text-center">
-          <div className="mx-auto mb-4 h-1 w-12 rounded-full bg-[#7db89b]" />
-          <h2 className="font-serif text-3xl font-semibold text-[#1a2744] md:text-4xl">
-            Why Homeowners Choose Us
-          </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-[#64748b]">
-            Premium results with the convenience and reliability you expect from a professional service.
-          </p>
-        </div>
+      
+
+      <section className="mx-auto max-w-6xl px-4 pb-4">
+        <ReviewSection />
       </section>
 
       <section className="bg-white py-16 md:py-20">
         <div className="mx-auto max-w-6xl px-4">
-          <div className="grid gap-12 lg:grid-cols-[1fr_420px] lg:items-start">
+        <div className="grid gap-12 lg:grid-cols-[1fr_420px] lg:items-start">
             <div>
               <div className="mb-4 h-1 w-12 rounded-full bg-[#7db89b]" />
               <h2 className="font-serif text-3xl font-semibold text-[#1a2744] md:text-4xl">

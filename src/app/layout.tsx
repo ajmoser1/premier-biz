@@ -40,7 +40,7 @@ export default function RootLayout({
     >
       <body className="flex min-h-full flex-col bg-[#f8f6f1] text-[#1a1a1a] font-sans">
         <Header />
-        <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-5 md:py-8">{children}</main>
+        <main className="mx-auto w-full min-w-0 max-w-6xl flex-1 px-4 pb-5 pt-2 md:pb-8 md:pt-3">{children}</main>
         <Footer />
         <StickyCallBar />
         <script

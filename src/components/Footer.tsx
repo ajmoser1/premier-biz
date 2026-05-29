@@ -1,5 +1,7 @@
+import Image from "next/image";
 import Link from "next/link";
 import { contactLinks, siteConfig } from "@/lib/site";
+import { getGoogleReviewSummary } from "@/lib/googleReviews";
 
 const footerLinks = {
   services: [
@@ -17,6 +19,8 @@ const footerLinks = {
 };
 
 export function Footer() {
+  const reviewSummary = getGoogleReviewSummary();
+
   return (
     <footer className="bg-[#1a2744] pb-24 md:pb-0">
       {/* Main Footer Content */}
@@ -25,13 +29,28 @@ export function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link href="/" className="inline-block">
-              <span className="font-serif text-xl font-semibold text-white">
-                {siteConfig.companyName}
-              </span>
+              <Image
+                src="/images/logo/premier-logo-primary.png"
+                alt={`${siteConfig.companyName} logo`}
+                width={184}
+                height={122}
+                className="h-auto w-[160px]"
+              />
             </Link>
             <p className="mt-3 text-sm leading-relaxed text-[#a8d4be]">
               Premium exterior cleaning services throughout Chicagoland. Same-day and emergency service available.
             </p>
+            {reviewSummary.rating ? (
+              <a
+                href={reviewSummary.googleMapsUri}
+                target="_blank"
+                rel="noreferrer"
+                className="mt-3 inline-flex items-center gap-2 rounded-full border border-[#7db89b]/40 bg-[#1e4d3a]/30 px-3 py-1 text-xs font-semibold text-[#d9f4e8] transition-colors hover:border-[#7db89b]"
+              >
+                <span aria-hidden>★</span>
+                {reviewSummary.rating.toFixed(1)} ({reviewSummary.userRatingCount} Google reviews)
+              </a>
+            ) : null}
             <div className="mt-4 h-1 w-12 rounded-full bg-[#7db89b]" />
           </div>
 

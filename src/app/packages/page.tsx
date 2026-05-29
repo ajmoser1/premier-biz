@@ -36,7 +36,7 @@ export default function PackagesPage() {
       {/* Packages Grid - Psychology: Anchoring effect, most popular highlighted */}
       <PackagesGrid packages={servicePackages} />
 
-      {/* Pricing Note */}
+      {/* Scope Note */}
       <section className="rounded-xl border border-[#e2e0db] bg-white p-6">
         <div className="flex items-start gap-4">
           <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#1e4d3a]/10 text-[#1e4d3a]">
@@ -46,10 +46,10 @@ export default function PackagesPage() {
           </div>
           <div>
             <h3 className="font-serif text-lg font-semibold text-[#1a2744]">
-              Custom Pricing Available
+              Custom Scope Available
             </h3>
             <p className="mt-1 text-sm text-[#64748b]">
-              Final pricing is confirmed after a brief walkthrough and can vary by property size, condition, and access. Need a custom scope? We can add painting touch-ups, hauling, handyman items, and seasonal maintenance to any package.
+              Every property has different needs, so we finalize scope after a brief walkthrough. Need a custom bundle? We can add painting touch-ups, hauling, handyman items, and seasonal maintenance to any package.
             </p>
           </div>
         </div>
